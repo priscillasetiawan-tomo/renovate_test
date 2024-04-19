@@ -20,7 +20,7 @@ jobs:
       - name: Run Renovate
         id: renovate
         run: |
-          docker run -d --rm \
+          docker run --rm \
           --volume ./configs/config.js:/usr/src/app/config.js \
           --env LOG_LEVEL=debug \
           --env MEND_RNV_ACCEPT_TOS='y' \
