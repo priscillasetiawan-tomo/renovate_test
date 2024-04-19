@@ -1,0 +1,31 @@
+name: Renovate
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+    
+jobs:
+  renovate:
+    name: Renovate
+    runs-on: ubuntu-latest
+    timeout-minutes: 2 
+    steps:
+      - name: Checkout
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      - name: Run Renovate
+        id: renovate
+        run: |
+          docker run -d --rm \
+          --volume ./configs/config.js:/usr/src/app/config.js \
+          --env LOG_LEVEL=debug \
+          --env MEND_RNV_ACCEPT_TOS='y' \
+          --env MEND_RNV_LICENSE_KEY='${{ secrets.MEND_RNV_LICENSE_KEY }}' \
+          --env MEND_RNV_PLATFORM='github' \
+          --env MEND_RNV_GITHUB_APP_ID='${{ secrets.MEND_RNV_GITHUB_APP_ID }}' \
+          --env MEND_RNV_GITHUB_APP_KEY='${{ secrets.MEND_RNV_GITHUB_APP_KEY }}' \
+          ghcr.io/mend/renovate-ce:7.0.0
