@@ -18,8 +18,6 @@ module.exports = {
                 'major',
                 'lockFileMaintenance',
             ],
-            automerge: false,
-            automergeType: "branch"
         }
     ],
     customManagers: [
@@ -28,10 +26,11 @@ module.exports = {
             datasourceTemplate: "helm",
             fileMatch: [
                 "(^|/)locals\\.tf$",
-
+                "(^|/)service/.+?/deploy\\.yaml$" // Matches any folder under "service" containing "deploy.yaml"
             ],
             matchStrings: [
-                "argo_rollouts                = \"+(?<currentValue>[^'\" ]+)\" +\\/\\/ renovate: dep=(?<depName>[^\\s]+) chart=(?<registryUrl>[^ \\n]+)",
+                "trivy         = \"+(?<currentValue>[^'\" ]+)\" +\\/\\/ renovate: dep=(?<depName>[^\\s]+) chart=(?<registryUrl>[^ \\n]+)",
+                "argo_rollouts = \"+(?<currentValue>[^'\" ]+)\" +\\/\\/ renovate: dep=(?<depName>[^\\s]+) chart=(?<registryUrl>[^ \\n]+)",
             ]
         }
     ],
