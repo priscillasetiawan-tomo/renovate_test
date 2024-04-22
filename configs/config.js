@@ -21,24 +21,20 @@ module.exports = {
         }
     ],
 
-    helm: [
-        {
-            fileMatch: [
-                "(^|/)service/.+?/deploy\\.yaml$" // Matches any folder under "service" containing "deploy.yaml"
-            ],
-        }
-    ],
-    customManagers: [
-        {
-            customType: "regex",
-            datasourceTemplate: "helm",
-            fileMatch: [
-                "(^|/)locals\\.tf$"
-            ],
-            matchStrings: [
-                "trivy         = \"+(?<currentValue>[^'\" ]+)\" +\\/\\/ renovate: dep=(?<depName>[^\\s]+) chart=(?<registryUrl>[^ \\n]+)",
-                "argo_rollouts = \"+(?<currentValue>[^'\" ]+)\" +\\/\\/ renovate: dep=(?<depName>[^\\s]+) chart=(?<registryUrl>[^ \\n]+)",
-            ]
-        }
-    ],
+    yaml: {
+        "files": ["services/*/deploy.yaml"]
+    },
+    // customManagers: [
+    //     {
+    //         customType: "regex",
+    //         datasourceTemplate: "helm",
+    //         fileMatch: [
+    //             "(^|/)locals\\.tf$"
+    //         ],
+    //         matchStrings: [
+    //             "trivy         = \"+(?<currentValue>[^'\" ]+)\" +\\/\\/ renovate: dep=(?<depName>[^\\s]+) chart=(?<registryUrl>[^ \\n]+)",
+    //             "argo_rollouts = \"+(?<currentValue>[^'\" ]+)\" +\\/\\/ renovate: dep=(?<depName>[^\\s]+) chart=(?<registryUrl>[^ \\n]+)",
+    //         ]
+    //     }
+    // ],
 };
