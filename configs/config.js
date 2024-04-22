@@ -26,7 +26,7 @@ module.exports = {
             datasourceTemplate: "helm",
             fileMatch: [
                 "(^|/)locals\\.tf$",
-                "(^|/)service/.+?/deploy\\.yaml$" // Matches any folder under "service" containing "deploy.yaml"
+
             ],
             matchStrings: [
                 "trivy                        = \"+(?<currentValue>[^'\" ]+)\" +\\/\\/ renovate: dep=(?<depName>[^\\s]+) chart=(?<registryUrl>[^ \\n]+)",
