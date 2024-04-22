@@ -3,7 +3,7 @@ module.exports = {
     username: 'renovate-release',
     gitAuthor: 'Renovate Bot <bot@renovateapp.com>',
     platform: 'github',
-    repositories: ['priscillasetiawan-tomo/renovate_test', 'priscillasetiawan-tomo/renovate-bot-ce'],
+    repositories: ['priscillasetiawan-tomo/renovate_test'],
     prHourlyLimit: 0,
     prConcurrentLimit: 0,
     packageRules: [
