@@ -21,9 +21,9 @@ module.exports = {
         }
     ],
 
-    yaml: {
-        files: ["service/*/deploy.yaml"]
-    },
+    kubernetes: {
+        fileMatch: ["\\.yaml$"]
+    }
     // customManagers: [
     //     {
     //         customType: "regex",
