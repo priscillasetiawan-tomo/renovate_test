@@ -20,13 +20,20 @@ module.exports = {
             ],
         }
     ],
+
+    helm: [
+        {
+            fileMatch: [
+                "(^|/)service/.+?/deploy\\.yaml$" // Matches any folder under "service" containing "deploy.yaml"
+            ],
+        }
+    ],
     customManagers: [
         {
             customType: "regex",
             datasourceTemplate: "helm",
             fileMatch: [
-                "(^|/)locals\\.tf$",
-                "(^|/)service/.+?/deploy\\.yaml$" // Matches any folder under "service" containing "deploy.yaml"
+                "(^|/)locals\\.tf$"
             ],
             matchStrings: [
                 "trivy         = \"+(?<currentValue>[^'\" ]+)\" +\\/\\/ renovate: dep=(?<depName>[^\\s]+) chart=(?<registryUrl>[^ \\n]+)",
