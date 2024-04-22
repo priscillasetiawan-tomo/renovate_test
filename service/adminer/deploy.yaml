@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: app
-          image: adminer:4.8.1
+          image: adminer:4.8.1 # renovate: tag=4.8.1
           imagePullPolicy: Always
           ports:
             - name: adminer
