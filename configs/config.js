@@ -8,7 +8,7 @@ module.exports = {
     username: 'renovate-release',
     gitAuthor: 'Renovate Bot <bot@renovateapp.com>',
     platform: 'github',
-    repositories: ['priscillasetiawan-tomo/renovate_test'],
+    repositories: ['priscillasetiawan-tomo/renovate_test', 'priscillasetiawan-tomo/test-1'],
     prHourlyLimit: 0,
     prConcurrentLimit: 0,
     autodiscover: true,
