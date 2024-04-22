@@ -3,7 +3,7 @@ module.exports = {
     username: 'renovate-release',
     gitAuthor: 'Renovate Bot <bot@renovateapp.com>',
     platform: 'github',
-    repositories: ['priscillasetiawan-tomo/renovate_test', 'priscillasetiawan-tomo/renovate-bot-ce'],
+    repositories: ['priscillasetiawan-tomo/renovate_test'],
     prHourlyLimit: 0,
     prConcurrentLimit: 0,
     autodiscover: true,
@@ -18,6 +18,8 @@ module.exports = {
                 'major',
                 'lockFileMaintenance',
             ],
+            automerge: false,
+            automergeType: "branch"
         }
     ],
     customManagers: [
@@ -29,7 +31,6 @@ module.exports = {
 
             ],
             matchStrings: [
-                "trivy                        = \"+(?<currentValue>[^'\" ]+)\" +\\/\\/ renovate: dep=(?<depName>[^\\s]+) chart=(?<registryUrl>[^ \\n]+)",
                 "argo_rollouts                = \"+(?<currentValue>[^'\" ]+)\" +\\/\\/ renovate: dep=(?<depName>[^\\s]+) chart=(?<registryUrl>[^ \\n]+)",
             ]
         }
