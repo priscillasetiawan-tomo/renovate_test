@@ -22,7 +22,7 @@ module.exports = {
     ],
 
     yaml: {
-        "files": ["services/*/deploy.yaml"]
+        files: ["service/*/deploy.yaml"]
     },
     // customManagers: [
     //     {
