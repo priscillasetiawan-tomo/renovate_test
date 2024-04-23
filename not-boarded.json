@@ -1,0 +1,9 @@
+{
+    "extends": [
+      "github>priscillasetiawan-tomo/renovate_test:base"
+    ],
+    "dependencyDashboardApproval": true,
+    "enabledManagers": [
+      "regex"
+    ]
+  }
