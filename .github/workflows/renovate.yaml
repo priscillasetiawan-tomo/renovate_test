@@ -59,7 +59,7 @@ on:
       logLevel:
         description: "Override default log level"
         required: false
-        default: "info"
+        default: "debug"
         type: string
       overrideSchedule:
         description: "Override all schedules"
@@ -97,7 +97,7 @@ jobs:
           RENOVATE_PLATFORM_COMMIT: "true"
           # Override schedule if set
           RENOVATE_FORCE: ${{ github.event.inputs.overrideSchedule == 'true' && '{''schedule'':null}' || '' }}
-          LOG_LEVEL: ${{ inputs.logLevel || 'info' }}
+          LOG_LEVEL: ${{ inputs.logLevel || 'debug' }}
           RENOVATE_TOKEN: ${{ steps.app-token.outputs.token }}
         with:
           configurationFile: .github/renovate.json
