@@ -40,6 +40,7 @@ jobs:
         run: |
           docker run --rm \
             --volume ./config.js:/usr/src/app/config.js \
+            --volume ./renovate.json:/usr/src/app/renovate.json \
             --env LOG_LEVEL=debug \
             --env RENOVATE_TOKEN="${{ steps.app-token.outputs.token }}" \
             ghcr.io/renovatebot/renovate:latest
