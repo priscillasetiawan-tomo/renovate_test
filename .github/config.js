@@ -5,7 +5,6 @@ module.exports = {
     platform: 'github',
     onboarding: false,
     includeForks: true,
-    repositories: ['priscillasetiawan-tomo/renovate_test'],
     prHourlyLimit: 0,
     prConcurrentLimit: 0,
     packageRules: [
