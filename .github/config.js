@@ -4,7 +4,6 @@ module.exports = {
     gitAuthor: 'Renovate Bot <bot@renovateapp.com>',
     platform: 'github',
     onboarding: false,
-    platform: 'github',
     includeForks: true,
     repositories: ['priscillasetiawan-tomo/renovate_test'],
     prHourlyLimit: 0,
