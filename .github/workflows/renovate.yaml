@@ -48,5 +48,5 @@ jobs:
             --env RENOVATE_TOKEN="${{ steps.app-token.outputs.token }}" \
             --env RENOVATE_REPOSITORIES="${{ github.repository }}" \
             --env RENOVATE_FORCE="${{ github.event.inputs.overrideSchedule == 'true' && '{''schedule'':null}' || '' }}" \
-            --env LOG_LEVEL="${{ inputs.logLevel || 'info' }}" \
+            --env LOG_LEVEL="${{ inputs.logLevel || 'debug' }}" \
             ghcr.io/renovatebot/renovate:latest
