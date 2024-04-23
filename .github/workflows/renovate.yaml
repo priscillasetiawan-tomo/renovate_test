@@ -32,6 +32,8 @@ jobs:
       # Don't waste time starting Renovate if JSON is invalid
       - name: Validate Renovate JSON
         run: jq type .github/renovate.json
+      - name: Validate Renovate Configuration with renovate-config-validator
+        uses: suzuki-shunsuke/github-action-renovate-config-validator@v1.0.1
       - name: Generate GitHub App Token
         id: app-token
         uses: actions/create-github-app-token@v1
@@ -48,6 +50,8 @@ jobs:
             --env RENOVATE_TOKEN="${{ steps.app-token.outputs.token }}" \
             --env RENOVATE_REPOSITORIES="${{ github.repository }}" \
             --env RENOVATE_FORCE="${{ github.event.inputs.overrideSchedule == 'true' && '{''schedule'':null}' || '' }}" \
-            ghcr.io/renovatebot/renovate:latest
+            ghcr.io/renovatebot/renovate:latest 
+
+      
 
 
