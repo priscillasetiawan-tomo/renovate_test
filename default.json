@@ -1,9 +1,0 @@
-{
-  "extends": [
-    "config:base",
-    "priscillasetiawan-tomo/renovate_test:base"
-  ],
-  "ignorePresets": [
-    "priscillasetiawan-tomo/renovate_test:not-onboarded"
-  ]
-}
