@@ -1,9 +1,6 @@
 module.exports = {
     requireConfig: "optional",
     onboarding: false,
-    extends: [
-        "local>priscillasetiawan-tomo/renovate_test:not-onboarded",
-    ],
     branchPrefix: 'update-version/',
     username: 'renovate-release',
     gitAuthor: 'Renovate Bot <bot@renovateapp.com>',
