@@ -48,6 +48,7 @@ jobs:
             --env RENOVATE_TOKEN="${{ steps.app-token.outputs.token }}" \
             --env RENOVATE_REPOSITORIES="${{ github.repository }}" \
             --env RENOVATE_FORCE="${{ github.event.inputs.overrideSchedule == 'true' && '{''schedule'':null}' || '' }}" \
+            --env RENOVATE_CONFIG= "https://github.com/priscillasetiawan-tomo/renovate_test/blob/main/config.js"
             ghcr.io/renovatebot/renovate:latest 
 
       
