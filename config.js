@@ -3,7 +3,10 @@ module.exports = {
     username: 'renovate-release',
     gitAuthor: 'Renovate Bot <bot@renovateapp.com>',
     platform: 'github',
-    repositories: ['priscillasetiawan-tomo/renovate_test', 'priscillasetiawan-tomo/test-1'],
+    onboarding: false,
+    platform: 'github',
+    includeForks: true,
+    repositories: ['priscillasetiawan-tomo/renovate_test'],
     prHourlyLimit: 0,
     prConcurrentLimit: 0,
     packageRules: [
@@ -17,6 +20,9 @@ module.exports = {
                 'major',
                 'lockFileMaintenance',
             ],
+            dependencyDashboardApproval: false,
+            automerge: false,  // enable auto merge for patch and minor update 
+            automergeType: "branch"
         }
     ],
 
