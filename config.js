@@ -6,7 +6,6 @@ module.exports = {
     repositories: ['priscillasetiawan-tomo/renovate_test', 'priscillasetiawan-tomo/test-1'],
     prHourlyLimit: 0,
     prConcurrentLimit: 0,
-    autodiscover: true,
     packageRules: [
         {
             description: 'lockFileMaintenance',
