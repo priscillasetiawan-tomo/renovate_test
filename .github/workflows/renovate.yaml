@@ -43,7 +43,7 @@ jobs:
       - name: Run Renovate
         run: |
           docker run --rm \
-            --volume ./renovate.json:/usr/src/app/config.js \
+            --volume ./config.js:/usr/src/app/config.js \
             --env LOG_LEVEL=debug \
             --env RENOVATE_TOKEN="${{ steps.app-token.outputs.token }}" \
             --env RENOVATE_REPOSITORIES="${{ github.repository }}" \
