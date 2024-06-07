@@ -56,7 +56,7 @@ mmodule.exports = {
     requireConfig: "optional",
     onboarding: false,
     extends: [
-        "local>priscillasetiawan-tomo/renovate_test"
+        "github>priscillasetiawan-tomo/renovate_test"
     ],
 }
 
