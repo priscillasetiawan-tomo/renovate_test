@@ -53,8 +53,8 @@
 // };
 
 mmodule.exports = {
-    requireConfig: "optional",
-    onboarding: false,
+    // requireConfig: "optional",
+    // onboarding: false,
     extends: [
         "github>priscillasetiawan-tomo/renovate_test"
     ],
