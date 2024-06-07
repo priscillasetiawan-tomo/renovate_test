@@ -1,0 +1,26 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adminer
+  labels:
+    tl.service.name: adminer
+    tl.service.type: tools
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      tl.service.name: adminer
+  template:
+    metadata:
+      labels:
+        tl.service.name: adminer
+        tl.service.type: tools
+    spec:
+      containers:
+        - name: app
+          image: adminer:4.7.9 
+          imagePullPolicy: Always
+          ports:
+            - name: adminer
+              containerPort: 8080

@@ -51,3 +51,34 @@
 //         }
 //     ],
 // };
+
+module.exports = {
+    branchPrefix: 'update-image-version/', // change the branch prefix 
+    username: 'tomoloyalty-machine',
+    gitAuthor: 'tomoloyalty-machine <infra+dev@tomoloyalty.com>',
+    onboarding: false,
+    platform: 'github',
+    includeForks: true,
+    repositories: ['Tomoloyalty/infra'], // add more repo here
+    prHourlyLimit: 5,
+    prConcurrentLimit: 10,
+
+    customManagers: [
+        {
+            customType: "regex",
+            datasourceTemplate: "helm",
+            fileMatch: [
+                "(^|/)locals\\.tf$"
+            ],
+            matchStrings: [ // sensitive to spaces, must be adjusted according to the locals.tf file
+                "trivy                        = \"+(?<currentValue>[^'\" ]+)\" +\\/\\/ renovate: dep=(?<depName>[^\\s]+) chart=(?<registryUrl>[^ \\n]+)",
+                "argo_rollouts = \"+(?<currentValue>[^'\" ]+)\" +\\/\\/ renovate: dep=(?<depName>[^\\s]+) chart=(?<registryUrl>[^ \\n]+)",
+                "datadog_update               = \"+(?<currentValue>[^'\" ]+)\" +\\/\\/ renovate: dep=(?<depName>[^\\s]+) chart=(?<registryUrl>[^ \\n]+)",
+                "cluster_autoscaler           = \"+(?<currentValue>[^'\" ]+)\" +\\/\\/ renovate: dep=(?<depName>[^\\s]+) chart=(?<registryUrl>[^ \\n]+)",
+                "aws_load_balancer_controller = \"+(?<currentValue>[^'\" ]+)\" +\\/\\/ renovate: dep=(?<depName>[^\\s]+) chart=(?<registryUrl>[^ \\n]+)",
+                "metrics_server               = \"+(?<currentValue>[^'\" ]+)\" +\\/\\/ renovate: dep=(?<depName>[^\\s]+) chart=(?<registryUrl>[^ \\n]+)",
+                "cert_manager                 = \"+(?<currentValue>[^'\" ]+)\" +\\/\\/ renovate: dep=(?<depName>[^\\s]+) chart=(?<registryUrl>[^ \\n]+)",
+            ]
+        }
+    ],
+};
