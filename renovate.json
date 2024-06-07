@@ -24,11 +24,8 @@
         ],
         "automerge": false
       }
-    ],
-     "includePaths": [
-          "modules/eks-blueprints/locals.tf"
-      ]
-  
+    ]
+
   
   
   }
