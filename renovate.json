@@ -1,0 +1,29 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:recommended", ":disableDependencyDashboard"
+    ],
+    "packageRules": [
+        {
+          "description": "Automerge Patch and Minor updates",
+          "matchUpdateTypes": [
+            "patch"
+          ],
+          "automerge": true,
+          "ignoreTests": true,
+          "labels": ["renovate-automerge"]
+        },
+        {
+          "description": "Include other updates without automerging",
+          "matchUpdateTypes": [
+            "minor",
+            "major",
+            "pin",
+            "digest",
+            "lockFileMaintenance"
+          ],
+          "automerge": false
+        }
+      ]
+  }
+  
