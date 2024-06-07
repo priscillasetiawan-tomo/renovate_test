@@ -52,11 +52,11 @@
 //     ],
 // };
 
-module.exports = {
-    requireConfig: "optional",
-    onboarding: false,
-    extends: [
-        "local>priscillasetiawan-tomo/renovate_test"
-    ],
-}
+// module.exports = {
+//     requireConfig: "optional",
+//     onboarding: false,
+//     extends: [
+//         "local>priscillasetiawan-tomo/renovate_test"
+//     ],
+// }
 
