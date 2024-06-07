@@ -38,7 +38,7 @@ jobs:
         with:
           app-id: ${{ secrets.MEND_RNV_GITHUB_APP_ID }}
           private-key: ${{ secrets.MEND_RNV_GITHUB_APP_KEY }}
-          repositories: priscillasetiawan-tomo/renovate_test, priscillasetiawan-tomo/test_1
+          
 
       - name: Run Renovate
         run: |
