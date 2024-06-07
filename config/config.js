@@ -52,7 +52,7 @@
 //     ],
 // };
 
-mmodule.exports = {
+module.exports = {
     requireConfig: "optional",
     onboarding: false,
     extends: [
